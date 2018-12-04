@@ -74,6 +74,12 @@ class Game1 extends React.Component{
             }
     }
 
+    componentDidUpdate(prevState){
+        if (prevState.cutImages !== this.state.cutImages) {
+            this.sidebarUpdate(this.state.cutImages)
+          }
+    }
+
 
     showTerms = () => {
 
@@ -195,6 +201,8 @@ class Game1 extends React.Component{
         }
         let coords = this.getRelativeCoords(event);
         let row = Math.ceil(coords.y / (this.state.elementHeight + this.state.lineHeight)) - 1;
+        
+        const selectedImg= this.state.cutImages[row]
         this.setState({selectedImagePart: this.state.cutImages[row]});
         this.drawBorder('lightblue', row);
     }
@@ -202,31 +210,34 @@ class Game1 extends React.Component{
         if (!this.state.isLoaded) {
             for (let x = 0; x < this.state.width; x += this.state.elementWidth) {
                 for (let y = 0; y < this.state.height; y += this.state.elementHeight) {
-                    this.state.cutImages.push({ sourceX: x, sourceY: y });
-                    this.state.original.push({ sourceX: x, sourceY: y, col: x / this.state.elementWidth, row: y / this.state.elementHeight });
-
+                    const cutImagesClone = [...this.state.cutImages]
+                    const originalImgClone = [...this.state.original]
+                    cutImagesClone.push({ sourceX: x, sourceY: y });
+                    originalImgClone.push({ sourceX: x, sourceY: y, col: x / this.state.elementWidth, row: y / this.state.elementHeight });
+                    this.setState({cutImages:cutImagesClone,original :originalImgClone})
                 }
             }
             this.setState({isLoaded: true});
             this.shuffle(this.state.cutImages);
 
-        }
-       
-
-    this.canvas2.height = (this.state.elementHeight + this.state.lineHeight) * (this.state.cutImages.length) + 10;
-    this.canvas2.width = 400;
-    console.log("yay");
-    this.ctx2.clearRect(0, 0, this.canvas2.width, this.canvas2.height);
-    for (let x = 0; x < this.state.cutImages.length; x++) {
-        const element = this.state.cutImages[x];
-        this.ctx2.drawImage(this.state.image, element.sourceX, element.sourceY, this.state.elementWidth, this.state.elementHeight, 0, (this.state.elementHeight + this.state.lineHeight) * x, this.state.elementWidth, this.state.elementHeight);
-        this.ctx2.lineWidth = this.state.lineHeight;
-        this.ctx2.moveTo(0, x * (this.state.elementHeight + this.state.lineHeight));
-        this.ctx2.lineTo(this.state.elementWidth + 10, x * (this.state.elementHeight + this.state.lineHeight));
-        this.ctx2.strokeStyle = "white";
-        this.ctx2.stroke();
-        }
+        }    
     }   
+
+    sidebarUpdate = (array) => {
+        this.canvas2.height = (this.state.elementHeight + this.state.lineHeight) * (array.length) + 10;
+        this.canvas2.width = 400;
+        console.log("yay");
+        this.ctx2.clearRect(0, 0, this.canvas2.width, this.canvas2.height);
+        for (let x = 0; x < array.length; x++) {
+            const element = array[x];
+            this.ctx2.drawImage(this.state.image, element.sourceX, element.sourceY, this.state.elementWidth, this.state.elementHeight, 0, (this.state.elementHeight + this.state.lineHeight) * x, this.state.elementWidth, this.state.elementHeight);
+            this.ctx2.lineWidth = this.state.lineHeight;
+            this.ctx2.moveTo(0, x * (this.state.elementHeight + this.state.lineHeight));
+            this.ctx2.lineTo(this.state.elementWidth + 10, x * (this.state.elementHeight + this.state.lineHeight));
+            this.ctx2.strokeStyle = "white";
+            this.ctx2.stroke();
+        }
+    }
     
     imageDropped = (event) => {
         if (this.state.selectedImagePart) {
@@ -239,7 +250,16 @@ class Game1 extends React.Component{
                 let y = row * this.state.elementHeight;
 
                 this.ctx.drawImage(this.state.image, this.state.selectedImagePart.sourceX, this.state.selectedImagePart.sourceY, this.state.elementWidth, this.state.elementHeight, x, y, this.state.elementWidth, this.state.elementHeight);
-                this.setState({cutImages: this.state.cutImages.filter(item => item !== this.state.selectedImagePart || console.log(item, this.state.selectedImagePart))});
+ 
+             const filtered =  this.state.cutImages.filter(item => {
+        
+               const item1 = this.state.selectedImagePart;
+        
+        
+               return JSON.stringify(item) !== JSON.stringify(item1)
+            })
+
+                this.setState({cutImages:filtered});
                 this.imageChanges();
                 this.state.collectedParts.push({ sourceX: this.state.selectedImagePart.sourceX, sourceY: this.state.selectedImagePart.sourceY, row: row, col: col });
                 
