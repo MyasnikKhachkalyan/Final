@@ -16,29 +16,32 @@ class Game1 extends React.Component{
             "https://picnichotels.com/wp-content/uploads/2016/05/gyumri1.jpg",
             "https://picnichotels.com/wp-content/uploads/2016/05/gyumri31.jpg"
         ];
+
+        this.state = {
+            width:800,
+            height:600,
+            lineHeight:15,
+            selectedImagePart: null,
+            isImageShowing: true,
+            elementWidth: 0,
+            elementHeight: 0,
+            collectedParts: [],
+            image: null,
+            cutImages: [],
+            x: 0,
+            y: 0,
+            isLoaded: false,
+            original: [],
+            inputValue: "",
+            isSelected: false,
+    
+    
+            
+            
+        };
     }
 
-    state = {
-        width:800,
-        height:600,
-        lineHeight:15,
-        selectedImagePart: null,
-        isImageShowing: true,
-        elementWidth: 0,
-        elementHeight: 0,
-        collectedParts: [],
-        image: null,
-        cutImages: [],
-        x: 0,
-        y: 0,
-        isLoaded: false,
-        original: [],
-        inputValue: "",
-
-
-        
-        
-    };
+    
         componentDidMount() {
             this.canvas = this.canvas1Ref.current;
             this.canvas2 = this.canvas2Ref.current;
@@ -76,7 +79,22 @@ class Game1 extends React.Component{
 
     componentDidUpdate(prevState){
         if (prevState.cutImages !== this.state.cutImages) {
-            this.sidebarUpdate(this.state.cutImages)
+            this.sidebarUpdate(this.state.cutImages);
+            if(this.state.isSelected){
+                let row = this.state.cutImages.indexOf(this.state.selectedImagePart);
+                if (this.state.selectedImagePart) {
+                    this.drawBorder('lightblue', row); 
+                    
+                    this.setState({isSelected:false})
+                    console.log('white')
+                }
+                else{
+                    this.drawBorder('white', row);
+                    this.setState({isSelected:false});
+                    console.log('blue')
+                }
+                console.log("yuy")
+                }
           }
     }
 
@@ -177,6 +195,7 @@ class Game1 extends React.Component{
         this.ctx2.strokeStyle = color;
         this.ctx2.lineWidth = 5;
         this.ctx2.strokeRect(0, coord, width, height);   
+        console.log('yay')
     }
     
 
@@ -193,18 +212,13 @@ class Game1 extends React.Component{
         return null;
     }
     imageSelected = (event) => {
-
-        if (this.state.selectedImagePart) {
-            let row = this.state.cutImages.indexOf(this.state.selectedImagePart);
-
-            this.drawBorder('white', row);
-        }
+        
         let coords = this.getRelativeCoords(event);
         let row = Math.ceil(coords.y / (this.state.elementHeight + this.state.lineHeight)) - 1;
-        
-        const selectedImg= this.state.cutImages[row]
-        this.setState({selectedImagePart: this.state.cutImages[row]});
-        this.drawBorder('lightblue', row);
+
+        this.setState({selectedImagePart: this.state.cutImages[row], isSelected: true });
+        console.log(row)
+
     }
     imageChanges = () => {
         if (!this.state.isLoaded) {
@@ -226,7 +240,6 @@ class Game1 extends React.Component{
     sidebarUpdate = (array) => {
         this.canvas2.height = (this.state.elementHeight + this.state.lineHeight) * (array.length) + 10;
         this.canvas2.width = 400;
-        console.log("yay");
         this.ctx2.clearRect(0, 0, this.canvas2.width, this.canvas2.height);
         for (let x = 0; x < array.length; x++) {
             const element = array[x];
@@ -282,7 +295,7 @@ class Game1 extends React.Component{
                 }
                 if (!isCollected) {
                     alert('You lose, try again');
-                   // window.location.reload();
+                    window.location.reload();
                 }
                 else {
                     alert('You win, go to the next level');
@@ -296,7 +309,7 @@ class Game1 extends React.Component{
                         imageIndex++;
                         this.setLocalStorage("image", this.images[imageIndex], 1);
                         this.setLocalStorage("index", `${imageIndex}`, 1);
-                       // window.location.reload();
+                        window.location.reload();
                     }
                 }
 
@@ -330,7 +343,7 @@ class Game1 extends React.Component{
         this.eraseLocalStorage('index');
         this.eraseLocalStorage('image');
         this.eraseLocalStorage('rowCount');
-        //window.location.reload();
+        window.location.reload();
     }
     setNumberOfRows = () => {
         this.eraseLocalStorage('index');
@@ -365,8 +378,8 @@ class Game1 extends React.Component{
                             Game Reset
                         </button>
                         <div className="form-group" style={{marginTop:10}}>
-                            <input type="number" className="form-control" min="2" placeholder="Number of rows and columns" name="numberOfRows"
-                                max="8" value={this.state.inputValue} onChange={this.handelChange}/>
+                            <input type="number" className="form-control" min="3" placeholder="Number of rows and columns" name="numberOfRows"
+                                max="6" value={this.state.inputValue} onChange={this.handelChange}/>
                         </div>
                         <button type="submit" className="btn btn-primary" style={{whiteSpace:'normal'}} onClick={this.setNumberOfRows} >Set
                             Number of rows</button>
