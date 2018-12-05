@@ -125,7 +125,7 @@ class Game2 extends React.Component{
 
     submit = () => {
 
-    this.setState({shouldChangeSubmitButtonStyle: false, shouldChangeRetryButtonStyle: true, shouldShowResult: true})
+    this.setState({shouldChangeSubmitButtonStyle: false, shouldChangeRetryButtonStyle: true, shouldShowRightAnswer: false, shouldShowResult: true})
 }
 
     result = () => {
@@ -186,8 +186,8 @@ class Game2 extends React.Component{
                 <div id="quizbox">{this.state.index === -1
                     ?<p>You are not from Gyumri? Don't worry! We think there might be some Gyumreci genes in you. Take this quiz to find out how Gyumreci you are!</p>
                     :this.state.shouldShowRightAnswer
-                        ?<p>{this.questions[this.state.index].info}</p>
-                        :this.state.shouldShowResult
+                        ? <p>{this.questions[this.state.index].info}</p>
+                        : this.state.shouldShowResult
                             ?<div><p>{this.result()}</p></div>
                             :<div>{this.questions[this.state.index].question}<br/><br />
                             <label><input type="radio" value={this.questions[this.state.index].choices[0]} checked={this.state.selectedOption == this.questions[this.state.index].choices[0]} onChange={this.handelAnswerChange}/>{this.questions[this.state.index].choices[0]}</label><br />
