@@ -7,7 +7,6 @@ import Game1 from './components/Game1';
 import Game2 from './components/Game2';
 import About from './components/About';
 import Header from './components/Header';
-import Menu from './components/Menu';
 import Footer from './components/Footer';
 
 
@@ -17,7 +16,7 @@ class App extends Component {
     return (
       <div>     
           <Header />
-          <Menu />
+
             <Switch>
               <Route exact path='/' component={Home}/>
               <Route path='/home' component={Home}/>

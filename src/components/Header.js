@@ -1,14 +1,18 @@
 import React from 'react';
-
+import Menu from './Menu';
 class Header extends React.Component{
 
-    render(){ 
+    render(){
         return (
-            <div style={{backgroundColor: 'red', textAlign: "center", Width: '100%', height: 200}}>
-                        This is our Header
+            <div className='header'>
+
+                <div className="logo"></div>
+                <Menu />
+
+
             </div>
 
-    
+
 )}
 
 }
