@@ -84,17 +84,11 @@ class Game1 extends React.Component{
                 let row = this.state.cutImages.indexOf(this.state.selectedImagePart);
                 if (this.state.selectedImagePart) {
                     this.drawBorder('lightblue', row); 
-                    
-                    this.setState({isSelected:false})
-                    console.log('white')
                 }
                 else{
                     this.drawBorder('white', row);
-                    this.setState({isSelected:false});
-                    console.log('blue')
                 }
-                console.log("yuy")
-                }
+            }
           }
     }
 
@@ -156,6 +150,7 @@ class Game1 extends React.Component{
         }
         return a;
     }
+    ///
  
 
     showAndChangeImage = () => {
@@ -217,7 +212,6 @@ class Game1 extends React.Component{
         let row = Math.ceil(coords.y / (this.state.elementHeight + this.state.lineHeight)) - 1;
 
         this.setState({selectedImagePart: this.state.cutImages[row], isSelected: true });
-        console.log(row)
 
     }
     imageChanges = () => {
@@ -365,7 +359,7 @@ class Game1 extends React.Component{
 
     render(){
         return(
-            <div className="container-fluid" /*style={{marginTop:15}}*/>
+            <div className="container-fluid" style={{marginTop:15}}>
                 <div className="row">
                     <div className="col-md-3" style={{height:600,overflowY: 'scroll',overflowX: 'hidden'}}>
                         <canvas ref={this.canvas2Ref} onClick={this.imageSelected} ></canvas>
