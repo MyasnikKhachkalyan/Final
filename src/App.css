@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 *{
     margin: 0;
     padding: 0;
@@ -24,16 +22,9 @@
     background-size: cover;
     background-position: center;
 }
-.menuul{
-=======
-=======
->>>>>>> e115173dea428526f7227ea1f468268ca1274fd8
-.header{
- background-color: grey;
- 
-}
+
 .menuul {
->>>>>>> e115173dea428526f7227ea1f468268ca1274fd8
+
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -124,8 +115,6 @@
 .footerli {
   float: left;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
 .logo-footer{
     background-image: url("logo-tab.png");
     background-size: cover;
@@ -147,11 +136,3 @@ a:-webkit-any-link{
     color: #565656;
     text-decoration: none;
 }
-=======
-
-
->>>>>>> e115173dea428526f7227ea1f468268ca1274fd8
-=======
-
-
->>>>>>> e115173dea428526f7227ea1f468268ca1274fd8

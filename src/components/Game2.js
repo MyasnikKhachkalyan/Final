@@ -40,7 +40,7 @@ class Game2 extends React.Component{
                 question: "Which of the following is one the seven churches in Gyumri?",
                 choices: ["Haghartsin", "Noravanq", "Holy Godmother or St. Seven Wounds", "St. Grigor Narekaci"],
                 correctAnswer: "Holy Godmother or St. Seven Wounds",
-                info: "Religion has always been a big part of Gyumri. During Soviet period, when the religion was a forbidden topic, the St. Seven Wounds church remained open for Christians of all denominations. There are seven functioning churches now in Gyumri:St. Seven Wounds (1874-1886), St. Nshan (1852-1856), St. Grigor Lusavorich (19th century), Kumayri Basilica (7th century), St. Sargis (2008), St. Hripsime (1991), St. Hakob Mtsbinetsi (2002)."
+                info: "Religion has always been a big part of Gyumri. During Soviet period, when the religion was a forbidden topic, the St. Seven Wounds church remained open for Christians of all denominations. There are seven functioning churches now in Gyumri:St. Seven Wounds (1874-1886), St. Holy Saviour (19th century), St. Nshan (1852-1856), St. Grigor Lusavorich (19th century), Kumayri Basilica (7th century), St. Sargis (2008), St. Hripsime (1991), St. Hakob Mtsbinetsi (2002)."
             },
             {
                 question: "According to one joke, almost everything that gets produced today seem to have on them written 'Made in China', but there is one thing, on which it is written 'Made only for Gyumreci people'. What is it?",
@@ -64,7 +64,7 @@ class Game2 extends React.Component{
                 question: "What is not an ingredient of a traditional dish of Gyumri?",
                 choices: ["Head of a cow or a sheep", "Feet of cow", "Brain of a pigeon", "Lungs of a cow or a sheep"],
                 correctAnswer: "Brain of a pigeon",
-                info: "Gyumri’s traditional cuisine is famous for its soups, pilafs, meat dishes and deserts.Special dishes include tatar boraki, dolma,kufta,khazan barbeque. Armenian traditional khash is favourite dish of Gyumretsis.Collection of Gyumri’s traditional desserts is very delicious. Traditional gata, pakhlava, shakar lokum (Butter Cookies), shakar choraki are everyone’s favorite.When you visit Gyumri you should taste Gyumri’s traditional Yaghli which a dough sheet fried in oil and powdered with sugar. Try it!"
+                info: "Gyumri’s traditional cuisine is famous for its soups, pilafs, meat dishes and deserts.Special dishes include tatar boraki, dolma,kufta,khazan barbeque. Armenian traditional khash is favourite dish of Gyumretsis.Collection of Gyumri’s traditional desserts is very delicious. Traditional gata, pakhlava, shakar lokum (Butter Cookies), shakar choraki are everyone’s favorite.When you visit Gyumri you should taste Gyumri’s traditional Yaghli which a dough sheet fried in oil and powdered with sugar."
             }];
 
             this.state = {
