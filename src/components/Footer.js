@@ -4,13 +4,22 @@ import Footermenu from "./Footermenu";
 class Footer extends React.Component{
     render(){
         return(
-            <div>
+            
+            <React.Fragment>
             <div className="footer-part">
                 <div className="logo-footer"></div>
                 <Footermenu />
             </div>
-                <p style={{textAlign: 'center'}}>Copyright 2018</p>
-            </div>
+            
+
+
+                <div className="copyright">
+                    Copyright 2018
+                </div>
+
+
+
+            </React.Fragment>
 
         )
     }

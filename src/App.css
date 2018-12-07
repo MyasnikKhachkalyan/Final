@@ -1,3 +1,4 @@
+
 *{
     margin: 0;
     padding: 0;
@@ -6,7 +7,7 @@
 }
 .header{
     width: 100%;
-    position: fixed;
+    /*position: fixed;*/
     background-color: #f2eded;
     display: flex;
     justify-content: space-between;
@@ -23,8 +24,11 @@
     background-position: center;
 }
 
+.header{
+ background-color: #e0e0e0;
+ 
+}
 .menuul {
-
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -53,7 +57,7 @@
 }
 .home-main{
     width: 100%;
-    padding-top: 65px;
+    /*padding-top: 65px;*/
 
 }
 .home-content{
@@ -136,3 +140,16 @@ a:-webkit-any-link{
     color: #565656;
     text-decoration: none;
 }
+
+.copyright{
+    width: 100%;
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    background-color: #888888;
+    font-size: 11px;
+    text-align: center;
+    /*padding-top: 9px;*/
+
+}
+
