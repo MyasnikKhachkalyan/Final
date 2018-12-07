@@ -125,7 +125,6 @@
 .footerli {
   float: left;
 }
-
 .logo-footer{
     background-image: url("logo-tab.png");
     background-size: cover;
@@ -147,6 +146,7 @@ a:-webkit-any-link{
     color: #565656;
     text-decoration: none;
 }
+
 .copyright{
     width: 100%;
     /*display: flex;*/
@@ -158,3 +158,4 @@ a:-webkit-any-link{
     /*padding-top: 9px;*/
 
 }
+

@@ -365,7 +365,7 @@ class Game1 extends React.Component{
 
     render(){
         return(
-            <div className="container-fluid" style={{marginTop:15}}>
+            <div className="container-fluid" /*style={{marginTop:15}}*/>
                 <div className="row">
                     <div className="col-md-3" style={{height:600,overflowY: 'scroll',overflowX: 'hidden'}}>
                         <canvas ref={this.canvas2Ref} onClick={this.imageSelected} ></canvas>
