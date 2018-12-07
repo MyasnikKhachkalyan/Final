@@ -275,9 +275,9 @@ class Game1 extends React.Component{
                 this.setState({cutImages:filtered});
                 this.imageChanges();
                 this.state.collectedParts.push({ sourceX: this.state.selectedImagePart.sourceX, sourceY: this.state.selectedImagePart.sourceY, row: row, col: col });
-                
+                this.setState({selectedImagePart: null});
             }
-            this.setState({selectedImagePart: null});
+
         }
         setTimeout(() => {
             if (this.state.cutImages.length === 0 && this.state.collectedParts.length === this.state.original.length) {

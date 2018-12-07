@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 *{
     margin: 0;
     padding: 0;
@@ -8,7 +7,7 @@
 }
 .header{
     width: 100%;
-    position: fixed;
+    /*position: fixed;*/
     background-color: #f2eded;
     display: flex;
     justify-content: space-between;
@@ -24,16 +23,12 @@
     background-size: cover;
     background-position: center;
 }
-.menuul{
-=======
-=======
->>>>>>> e115173dea428526f7227ea1f468268ca1274fd8
+
 .header{
- background-color: grey;
+ background-color: #e0e0e0;
  
 }
 .menuul {
->>>>>>> e115173dea428526f7227ea1f468268ca1274fd8
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -62,7 +57,7 @@
 }
 .home-main{
     width: 100%;
-    padding-top: 65px;
+    /*padding-top: 65px;*/
 
 }
 .home-content{
@@ -124,8 +119,7 @@
 .footerli {
   float: left;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 .logo-footer{
     background-image: url("logo-tab.png");
     background-size: cover;
@@ -147,11 +141,14 @@ a:-webkit-any-link{
     color: #565656;
     text-decoration: none;
 }
-=======
+.copyright{
+    width: 100%;
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    background-color: #888888;
+    font-size: 11px;
+    text-align: center;
+    /*padding-top: 9px;*/
 
-
->>>>>>> e115173dea428526f7227ea1f468268ca1274fd8
-=======
-
-
->>>>>>> e115173dea428526f7227ea1f468268ca1274fd8
+}
