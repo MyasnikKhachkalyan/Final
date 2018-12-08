@@ -85,10 +85,6 @@ class Game2 extends React.Component{
             }
     }
 
-    componentDidMount(){
-        this.setState({quizboxContainer: ( <p>You are not from Gyumri? Don't worry! We think there might be some Gyumreci genes in you. Take this quiz to find out how Gyumreci you are!</p>)})
-
-    }
     
     startQuiz = () =>{
         this.setState({shouldChangeStartButtonStyle:false, shouldChangeGetAnswerButtonStyle:true,})

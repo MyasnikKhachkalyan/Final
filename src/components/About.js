@@ -8,6 +8,7 @@ class About extends React.Component{
 
 
                 <div className="team">
+                    <h1>Our Team</h1>
 
 
                     <div className="row1">
@@ -16,7 +17,7 @@ class About extends React.Component{
                         <img src="team/lil.jpg" width={200} height={200}/>
                         <div className="memberdesc"> <p>Lilit Khachatryan</p>
                             <p><a href="https://www.facebook.com/lilitkhachatryan11" target="_blank"><i className="fab fa-facebook-f"></i></a>
-                                <a href="lilit_khachatryan2@edu.aua.am" target="_top"><i className="far fa-envelope"></i></a>
+                                <a href="mailto:lilit_khachatryan2@edu.aua.am" target="_top"><i className="far fa-envelope"></i></a>
                                 <a href="tel:+37494336317" target="_top"><i className="fas fa-phone"></i></a>
                             </p>
                         </div>
@@ -27,7 +28,7 @@ class About extends React.Component{
                             <img src="team/myas.jpg" width={200} height={200}/>
                             <div className="memberdesc"> <p>Myasnik Khachkalyan</p>
                                 <p><a href="https://www.facebook.com/myasnik.khachkalyan" target="_blank"><i className="fab fa-facebook-f"></i></a>
-                                    <a href="myasnik_khachkalyan@edu.aua.am" target="_top"><i className="far fa-envelope"></i></a>
+                                    <a href="mailto:myasnik_khachkalyan@edu.aua.am" target="_top"><i className="far fa-envelope"></i></a>
                                     <a href="tel:+37494070540" target="_top"><i className="fas fa-phone"></i></a>
                                 </p>
                             </div>

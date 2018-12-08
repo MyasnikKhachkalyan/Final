@@ -11,10 +11,11 @@ class Game1 extends React.Component{
         this.canvas = null;
         this.canvas2 = null;
         this.images = [
-            "http://rima.tours/upload/thumbnails_800_600_crop/152077295162602-GYUMRI-PANORAMA-1.jpg",
-            "https://media-cdn.sygictraveldata.com/media/800x600/612664395a40232133447d33247d383637373534353137",
-            "https://picnichotels.com/wp-content/uploads/2016/05/gyumri1.jpg",
-            "https://picnichotels.com/wp-content/uploads/2016/05/gyumri31.jpg"
+            "http://www.tripwow.ru/static/post_img/passonboard/9b909a9d463e5923d42cd4b1b5089867.jpg?fbclid=IwAR2jzW0w11eZQmhfGTJUa6Tv_mIzJ6Q2kwI13iaD_57RwFBoF8PX9eKZ2UA",
+            "http://litetrip.ru/images/Otchety/Armeniya/2013/9_mastara_gumri/armeniya_gumri_chernaya_krepost_mat_armeniya.jpg?fbclid=IwAR2MAA3cE3AMMFu-R7iiQ6wy1vVLzmbx8jZkCdgdeILFTWlQruOXJijpM0M",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Surp_Khach_Gyumri%2C_Armenia%2C_June_2015.jpg/800px-Surp_Khach_Gyumri%2C_Armenia%2C_June_2015.jpg?fbclid=IwAR1hZaEwwVlQluBrLNVHabR0YM5z-Fs-TYuYA0SItU3z6z42a1brjWzwPTE",
+            "https://otvet.imgsmail.ru/download/u_e5866c8f5ce25a3a709b398a1101ccf4_800.jpg?fbclid=IwAR2wBrnl3rxIDNMD03S_glAcaQP5IFwcbXnAAtuHedueTc2j6P1EqrtEpqA",
+            "https://static1.squarespace.com/static/54412118e4b03de3b6796773/t/5a293797f9619ace6d7b89a5/1512650668056/%D0%93%D0%AE%D0%9C%D0%A0%D0%98.jpg?fbclid=IwAR2Q6Hyx5sDXn7hqVnPteRD35Kdtpd2S21uDTfjiD4ySJMlbyVoVH8em29U"
         ];
 
         this.state = {
